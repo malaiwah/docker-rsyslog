@@ -1,0 +1,6 @@
+/var/log/remote/*/.*.log /var/log/remote/*/*.log {
+    sharedscripts
+    postrotate
+        /etc/init.d/rsyslog reload &>/dev/null || true
+    endscript
+}
