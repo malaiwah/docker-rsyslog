@@ -1,6 +1,8 @@
-/var/log/remote/*/.*.log /var/log/remote/*/*.log {
+/var/log/messages /var/log/remote/*/.*.log /var/log/remote/*/*.log {
     sharedscripts
+    missingok
+    notifempty
     postrotate
-        /etc/init.d/rsyslog reload &>/dev/null || true
+        kill -HUP $(cat /run/rsyslogd.pid) &>/dev/null || true
     endscript
 }
