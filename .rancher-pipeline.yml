@@ -4,7 +4,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: rsyslog
+      tag: rsyslog-receiver
       pushRemote: true
       registry: docker.picocloud.me
 timeout: 60
